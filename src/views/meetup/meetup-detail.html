@@ -1,0 +1,59 @@
+{% extends '../layout/base.html' %}
+
+{% block main %}
+
+<style>
+*{
+    box-sizing: border-box;
+}
+.title {
+    text-align: center;
+    margin: 30px;
+    color: white;
+    background-color: brown;
+    padding: 20px;
+}
+.no{
+    margin: 20px 400px;
+}
+
+@media (max-width:700px){
+  .no{
+    margin: 0px;
+    margin-left: 20px;
+  }
+}
+
+</style>
+
+
+<div class="container">
+  <h1 class="title">Meetup Title :- {{meetup.title}}</h1>
+  <hr class="divider" />
+
+  <div class="card no" style="width: 18rem">
+    <img src="https://images.unsplash.com/photo-1477346611705-65d1883cee1e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" class="card-img-top" />
+    <div class="card-body">
+      <h5 class="card-title">Title :- {{meetup.title}}</h5>
+      <h6 class="card-text">Name :- {{meetup.nameOfHead}}</h6>
+      <hr>
+      <p class="card-text">Location :- {{meetup.location}}</p>
+      <p class="card-text">Phone Number :- {{meetup.phoneNo}}</p>
+      <p class="card-text">Date of Creation :-{{meetup.date.getDate()}}/{{meetup.date.getMonth()+1}}/{{meetup.date.getFullYear()}}</p>
+      <p class="card-text">Description :-</p>
+      <p class="card-text">{{meetup.description}} </p>
+      <a class="detail btn btn-primary" href="/meetups">Go Back</a>
+    </div>
+  </div>
+
+
+
+
+  </div>
+
+
+
+
+
+
+{% endblock %}

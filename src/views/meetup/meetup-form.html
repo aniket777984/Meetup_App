@@ -1,0 +1,82 @@
+{% extends '../layout/base.html' %}
+
+{% block main %} 
+
+<style>
+.title{
+    text-align: center;
+    margin: 30px;
+    color: white;
+    background-color: orange;
+    padding: 20px;
+}
+.message{
+    text-align: center;
+    color: white;
+    background-color: green;
+    font-size: 30px;
+    padding: 15px;
+}
+.error{
+    text-align: center;
+    color: white;
+    background-color:rgb(240, 20, 20);
+    font-size: 30px;
+    padding: 15px;
+}
+.form-label{
+    color: blue;
+    font-size: 20px;
+    padding: 10px 0px ;
+}
+
+</style>
+
+
+<div class="container">
+
+    <h1 class="title">Meetup Form</h1>
+    <hr class="divider">
+    
+    {% if (message) %}
+    <div class="message">
+        {{message}}
+    </div>
+    {% endif %} 
+    {% if (error) %}
+    <div class="error">
+        {{error}}
+    </div>
+    {% endif %}
+       
+
+
+    <form action="" method="post">
+        <div class="mb-3">
+          <label class="form-label">Meetup Title</label>
+          <input type="text" class="form-control" name="title" >
+        <div class="mb-3">
+          <label class="form-label">Name Of Head</label>
+          <input type="text" class="form-control" name="nameOfHead">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Enter the Location</label>
+            <input type="text" class="form-control" name="location">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Enter the Phone Number</label>
+            <input type="number" class="form-control" name="phoneNo">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Enter the Description of the Meetup</label>
+            <textarea type="text" class="form-control" name="description">
+            </textarea>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Create Meetup</button>
+      </form>
+
+ 
+</div>
+
+{% endblock %}
